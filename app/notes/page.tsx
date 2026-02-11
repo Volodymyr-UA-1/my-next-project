@@ -11,7 +11,9 @@ const Notes = () => {
     const response = await getNotes();
     if (response?.notes) {
       setNotes(response.notes);
+      console.log('Client log:', notes);
     }
+
   };
 
   return (
