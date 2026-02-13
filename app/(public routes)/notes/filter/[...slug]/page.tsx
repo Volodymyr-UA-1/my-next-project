@@ -1,5 +1,7 @@
 import { getNotes } from '@/lib/api';
 import NoteList from '@/components/NoteList/NoteList';
+import css from '../../../../components/NoteList/NoteList.module.css';
+
 
 type Props = {
     params: Promise<{ slug: string[] }>;
@@ -12,7 +14,7 @@ const NotesByCategory = async ({ params }: Props) => {
     console.log('Server log:', response);
     return (
         <div>
-            <h1>Notes List</h1>
+            <h1 className={css.title}>Notes List</h1>
             {response?.notes?.length > 0 && <NoteList notes={response.notes} />}
         </div>
     );

@@ -1,5 +1,13 @@
 import axios from "axios";
 
+export type User = {
+  id: string;
+  name: string;
+  email: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
 export type Note = {
   id: string;
   title: string;
@@ -20,6 +28,19 @@ export const getSingleNote = async (id: string) => {
   return res.data;
 };
 
+export type Category = {
+  id: string;
+  name: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export const getCategories = async () => {
+  const res = await axios<Category[]>("/categories");
+  return res.data;
+};
+
 axios.defaults.baseURL = "https://next-v1-notes-api.goit.study";
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -29,4 +50,13 @@ export const getNotes = async (categoryId?: string) => {
     params: { categoryId },
   });
   return res.data;
+};
+
+export const getUser = async (id: string): Promise<User | null> => {
+  try {
+    const res = await axios.get<User>(`/users/${id}`);
+    return res.data;
+  } catch (err) {
+    return null; // повертаємо null, якщо користувача не існує
+  }
 };

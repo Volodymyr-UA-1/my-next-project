@@ -1,14 +1,14 @@
-// type Props = {
-//     params: Promise<{ slug?: string[] }>;
-// };
+type Props = {
+    params: { slug?: string[] };
+};
 
-// export default async function DocsPage({ params }: Props) {
-//     const { slug } = await params;
+export default function DocsPage({ params }: Props) {
+    const { slug } = params;
 
-//     return (
-//         <div>
-//             <h1>Docs page</h1>
-//             <p>Current path: {params.slug?.join(" / ") || "home"}</p>
-//         </div>
-//     );
-// }
+    return (
+        <div>
+            <h1>Docs page</h1>
+            <p>Current path: {slug?.join(" / ") || "home"}</p>
+        </div>
+    );
+}
