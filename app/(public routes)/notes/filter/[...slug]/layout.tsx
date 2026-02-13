@@ -1,4 +1,4 @@
-import NotesByCategory from './page';
+import type { ReactNode } from "react";
 import css from './page.module.css';
 
 type Props = {
