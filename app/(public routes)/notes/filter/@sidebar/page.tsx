@@ -1,12 +1,5 @@
-import { getNotes } from '@/lib/api';
-import NoteList from '@/components/NoteList/NoteList';
-import css from '../../../../components/NoteList/NoteList.module.css';
 import Link from 'next/link';
 import { getCategories } from '@/lib/api';
-
-type Props = {
-    params: { slug: string[] }; // не Promise
-};
 
 const NotesSidebar = async () => {
     const categories = await getCategories();

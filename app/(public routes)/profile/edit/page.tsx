@@ -1,8 +1,12 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Edit Profile',
+    description: 'Edit your user details and settings',
+};
+
 const EditProfile = () => {
-    return (
-        <div>
-            <h2>EditProfile</h2>
-        </div>
-    );
-}
+    return <div>EditProfile</div>;
+};
+
 export default EditProfile;
