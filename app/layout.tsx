@@ -5,7 +5,7 @@ import "./globals.css";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider"
 // import Modal from "@/components/Modal/Modal";
 import { Roboto } from 'next/font/google';
-
+import type NotesSidebar from "./(public routes)/notes/filter/@sidebar/default";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],

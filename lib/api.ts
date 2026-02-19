@@ -36,6 +36,17 @@ export type Category = {
   updatedAt: string;
 };
 
+export type NewNoteData = {
+  title: string;
+  content: string;
+  categoryId: string;
+};
+
+export const createNote = async (data: NewNoteData) => {
+  const res = await axios.post<Note>("/notes", data);
+  return res.data;
+};
+
 export const getCategories = async () => {
   const res = await axios<Category[]>("/categories");
   return res.data;
